@@ -1,0 +1,89 @@
+/* header要素のスタイル */
+header {
+  margin-bottom: 20px;                 /* 下の余白 */
+  background-color: rgb(244, 79, 79);  /* 背景色 */
+  text-align: center;                  /* 中央揃え */
+}
+
+/* h1要素のスタイル */
+h1 {
+  color: rgb(255, 255, 255); /* 文字色（白） */
+}
+
+/* main要素のスタイル */
+main {
+  padding: 10px; /* 内側の余白を上下左右10px */
+}
+
+/* id=parent をFlexコンテナ化し、均等配置 */
+#parent {
+  display: flex;
+  justify-content: space-around; /* アイテムを均等な間隔で配置 */
+  flex-wrap: wrap;               /* 横幅が足りない場合折り返し */
+}
+
+/* class=contents のスタイル */
+.contents {
+  border: 3px solid rgb(238, 204, 204);  /* 枠線（太さ3px、実線、色） */
+  flex-basis: 25%;                       /* 親要素の25%幅 */
+  padding: 10px 15px;                    /* 内側の余白（上下10px、左右15px） */
+  margin: 20px 0;                        /* 外側の余白（上下20px、左右0） */
+  text-align: center;                    /* 中央揃え */
+  box-sizing: border-box;                /* パディング込みで幅を計算 */
+}
+
+/* h2要素のスタイル */
+h2 {
+  font-size: 25px;
+  border-bottom: 3px dotted rgb(236, 122, 122); /* 下線（太さ3px、点線、色） */
+   }
+
+/* h2の前に●記号を表示 */
+h2::before {
+  content: "●";
+  color: rgb(239, 111, 139);
+   }
+
+/* class=contents 内の2番目のp要素の1文字目 */
+.contents p:nth-of-type(2)::first-letter {
+  font-weight: bold;
+  color: rgb(97, 206, 249);
+}
+
+/* 画像スタイル */
+.contents img {
+  margin: 10px 0;   /* 上下10px、左右0 */
+  width: 70%;       /* 幅を70%に */
+}
+
+footer {
+  background-color: rgb(244, 79, 79); /* 背景色 */
+  text-align: center;                /* 中央揃え */
+  padding: 10px 0;                   /* 上下の余白（お好みで） */
+}
+
+footer a {
+  color: rgb(255, 255, 255);         /* 通常時の文字色 */
+  }
+
+footer a:visited {
+  color: rgb(193, 234, 251);         /* 訪問済みリンクの文字色 */
+}
+
+footer a:hover {
+  color: rgb(245, 178, 168);         /* マウスカーソルを乗せたときの文字色 */
+}
+
+@media screen and (max-width: 768px) {
+  h2 {
+    font-size: 30px;
+  }
+
+  p {
+    font-size: 25px;
+  }
+
+  #parent {
+    flex-direction: column; /* 子要素を縦に並べる */
+   }
+}
